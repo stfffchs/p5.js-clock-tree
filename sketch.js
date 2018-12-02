@@ -1,8 +1,5 @@
 function setup() {
-	createCanvas(500, 500);
-
-	fill(255,255,255);
-	stroke(255);
+	createCanvas(windowWidth, windowHeight);
 
 }
 
@@ -10,17 +7,42 @@ function draw() {
 	background(0,0,0);
 
 	var sec = second();
+    var min = minute();
+    var hr = hour();
+    var minRadius = map(min, 0, 59, 60, 119)
+    var hrRadius = map(hr, 0, 59, 120, 143)
+	var fullscreen = 300 / 60;
 
-	rect(10,350,sec,100);
+	//Hours-Underlay
+    fill(255, 0, 0);
+    ellipse(width/2,height/2, 35940, 35940);
+	//Hours
+    noFill;
+    stroke(0);
+    ellipse(width/2,height/2,hrRadius * fullscreen,hrRadius * fullscreen);
+
+    //Minutes-Underlay
+    fill(0, 255, 0);
+    ellipse(width/2,height/2, 600, 600);
+    //Minutes
+    noFill;
+    ellipse(width/2,height/2,minRadius * fullscreen,minRadius * fullscreen);
+
+
+    //Seconds Underlay
+    fill(255, 255, 0);
+    ellipse(width/2,height/2,300, 300);
+    //Seconds
+    noFill;
+    stroke(0);
+    ellipse(width/2,height/2,sec * fullscreen,sec * fullscreen);
+
+//
 }
 
-/*
- Aufgabe:
- Gib analog zu Sekunde den Wert der Minute und der Stunde in je eine weitere Variable.
- Benutze diese Variablen für andere Masse und andere Formen.
- Bsp. Position / Ellipse
 
- Zusatz: Die Auswirkung der Veränderung ist relativ klein. Wir bewegen uns im Pixelmass, 60 Pixel sind nicht so viel.
- Wir könntest du durch eine mathematische Manipulation den Effekt vergrössern?
-
- */
+//1m = 60s
+//1h = 60m
+//1d = 24h
+//1w = 168d
+//1y = 52w//
