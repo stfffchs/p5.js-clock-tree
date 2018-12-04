@@ -9,14 +9,24 @@ function draw() {
 	var sec = second();
     var min = minute();
     var hr = hour();
-    var minRadius = map(min, 0, 59, 60, 119)
-    var hrRadius = map(hr, 0, 59, 120, 143)
-	var fullscreen = 300 / 60;
+    //var day = day();
+    var minRadius = map(min, 0, 59, 60, 119);
+    var hrRadius = map(hr, 0, 23, 120, 143)
 
-	//Hours-Underlay
+    var fullscreen = 300 / 60;
+
+/*	//Day-Underlay
+    fill(255, 255, 255);
+    ellipse(width/2,height/2, 870, 870);
+	//Days
+    noFill;
+    stroke(0);
+    ellipse(width/2,height/2,day * fullscreen,day * fullscreen);*/
+
+    //Hours-Underlay
     fill(255, 0, 0);
-    ellipse(width/2,height/2, 35940, 35940);
-	//Hours
+    ellipse(width/2,height/2, 715, 715);
+    //Hours
     noFill;
     stroke(0);
     ellipse(width/2,height/2,hrRadius * fullscreen,hrRadius * fullscreen);
