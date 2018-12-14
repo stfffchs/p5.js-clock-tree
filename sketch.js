@@ -1,38 +1,52 @@
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, windowHeight);
 
 }
 
 function draw() {
-	background(0,0,0);
+	background(0);
 
 	var sec = second();
     var min = minute();
     var hr = hour();
-    //var day = day();
+    var d = day();
+    var m = month();
+
     var minRadius = map(min, 0, 59, 60, 119);
     var hrRadius = map(hr, 0, 23, 120, 143)
+    var dRadius = map(day, 1, 31, 144, 175)
+    var mRadius = map(month, 1, 12, 176, 188)
 
     var fullscreen = 300 / 60;
 
-/*	//Day-Underlay
-    fill(255, 255, 255);
-    ellipse(width/2,height/2, 870, 870);
-	//Days
+
+
+    //Month-Underlay
+    fill(50, 100, 200);
+    ellipse(width/2,height/2, 935, 935);
+    //Month
     noFill;
     stroke(0);
-    ellipse(width/2,height/2,day * fullscreen,day * fullscreen);*/
+    ellipse(width/2,height/2,mRadius * fullscreen,mRadius * fullscreen);
+
+    //Day-Underlay
+    fill(230, 200, 230);
+    ellipse(width/2,height/2, 875, 875);
+    //Days
+    noFill;
+    stroke(0);
+    ellipse(width/2,height/2,dRadius * fullscreen,dRadius * fullscreen);
 
     //Hours-Underlay
-    fill(255, 0, 0);
-    ellipse(width/2,height/2, 715, 715);
+    fill(224,255,255);
+    ellipse(width/2,height/2, 720, 720);
     //Hours
     noFill;
     stroke(0);
     ellipse(width/2,height/2,hrRadius * fullscreen,hrRadius * fullscreen);
 
     //Minutes-Underlay
-    fill(0, 255, 0);
+    fill(72,209,204);
     ellipse(width/2,height/2, 600, 600);
     //Minutes
     noFill;
@@ -40,7 +54,7 @@ function draw() {
 
 
     //Seconds Underlay
-    fill(255, 255, 0);
+    fill(100,149,237);
     ellipse(width/2,height/2,300, 300);
     //Seconds
     noFill;
@@ -51,8 +65,3 @@ function draw() {
 }
 
 
-//1m = 60s
-//1h = 60m
-//1d = 24h
-//1w = 168d
-//1y = 52w//
