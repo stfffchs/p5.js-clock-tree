@@ -4,7 +4,7 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    background(0, 0, 0, 80);
 
     var sec = second();
     var min = minute();
@@ -70,7 +70,9 @@ function draw() {
     stroke(255);
     ellipse(width/2,height/2,sec * fullscreen,sec * fullscreen);
 
-//
+    frameRate(5);
+
+
 }
 
 
