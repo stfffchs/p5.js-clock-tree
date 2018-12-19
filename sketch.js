@@ -21,14 +21,14 @@ function draw() {
 
 
 
-    //Month-Underlay
-    fill(255, 255, 255, 10);
-    noStroke();
-    ellipse(width/2,height/2, 935, 935);
-    //Month
-    noFill;
-    stroke(255);
-    ellipse(width/2,height/2,mRadius * fullscreen,mRadius * fullscreen);
+    ////Month-Underlay
+    //fill(255, 255, 255, 10);
+    //noStroke();
+    //ellipse(width/2,height/2, 935, 935);
+    ////Month
+    //noFill;
+    //stroke(255);
+    //ellipse(width/2,height/2,mRadius * fullscreen,mRadius * fullscreen);
 
 
     //Day-Underlay
@@ -74,3 +74,4 @@ function draw() {
 }
 
 
+//
